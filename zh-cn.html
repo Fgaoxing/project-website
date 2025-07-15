@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniGFM - 极简JavaScript Markdown渲染器</title>
+    <link rel="stylesheet" href="styles.css">
+    </link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- 顶部导航 -->
+    <header>
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <h1>MiniGFM</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="#features">功能特点</a>
+            <a href="#demo">在线演示</a>
+            <a href="#quick-start">快速开始</a>
+            <a href="#config">配置选项</a>
+            <a href="/">ENG</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- 概述区域 -->
+        <section class="overview">
+            <p class="tagline chinese-font">轻量级JavaScript Markdown渲染器，接近GitHub风格的高兼容性</p>
+            <div class="badges">
+                <div class="badge blue">
+                    <i class="fas fa-feather-alt"></i>
+                    仅3KB极轻量
+                </div>
+                <div class="badge green">
+                    <i class="fas fa-shield-alt"></i>
+                    XSS安全保障
+                </div>
+                <div class="badge pink">
+                    <i class="fas fa-heart"></i>
+                    零依赖设计
+                </div>
+            </div>
+            <div class="badges">
+                <a href="https://github.com/OblivionOcean/MiniGFM" target="_blank" class="badge blue">
+                    <i class="fab fa-github"></i>
+                    GitHub仓库
+                </a>
+                <a href="https://www.npmjs.com/package/@oblivionocean/minigfm" target="_blank" class="badge green">
+                    <i class="fab fa-npm"></i>
+                    NPM包
+                </a>
+            </div>
+        </section>
+
+        <!-- 功能特点卡片 -->
+        <section id="features">
+            <h2 class="section-title">核心功能</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-weight"></i>
+                        <h3>极致的轻量</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="chinese-font">
+                            <li>核心代码仅约3KB</li>
+                            <li>Brotli压缩后低至1.5KB</li>
+                            <li>零依赖，纯原生JavaScript实现</li>
+                            <li>加载迅速，完美适合前端项目</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fab fa-github"></i>
+                        <h3>GFM高兼容</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="chinese-font">
+                            <li>支持GitHub Flavored Markdown规范</li>
+                            <li>完美渲染表格、任务列表等高级元素</li>
+                            <li>自动链接检测</li>
+                            <li>行内代码和代码块高亮支持</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-lock"></i>
+                        <h3>安全可靠</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="chinese-font">
+                            <li>内置XSS安全防护</li>
+                            <li>默认转义HTML标签</li>
+                            <li>提供安全的unsafe模式可选</li>
+                            <li>严谨的输入处理机制</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 快速开始 -->
+        <section id="quick-start">
+            <h2 class="section-title">快速开始</h2>
+            <div class="content-block chinese-font">
+                <p>将MiniGFM集成到您的项目中只需几步：</p>
+
+                <div class="tabs">
+                    <div class="tab active" data-tab="cdn">CDN方式</div>
+                    <div class="tab" data-tab="npm">NPM方式</div>
+                </div>
+
+                <div class="tab-content active" id="cdn-tab">
+                    <p>在HTML中通过CDN引入：</p>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>HTML</span>
+                            <button class="copy-code">复制代码</button>
+                        </div>
+                        <pre><code>&lt;script src="https://cdn.jsdelivr.net/npm/@oblivionocean/minigfm@latest/dist/index.min.js"&gt;&lt;/script&gt;</code></pre>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="npm-tab">
+                    <p>通过NPM安装：</p>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>终端</span>
+                            <button class="copy-code">复制代码</button>
+                        </div>
+                        <pre><code>npm install @oblivionocean/minigfm</code></pre>
+                    </div>
+
+                    <p>在项目中使用：</p>
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>JavaScript</span>
+                            <button class="copy-code">复制代码</button>
+                        </div>
+                        <pre><code>// 使用ESModule导入
+import MiniGFM from '@oblivionocean/minigfm';
+
+// 使用CommonJS导入
+const MiniGFM = require('@oblivionocean/minigfm').MiniGFM;
+
+// 创建实例并解析Markdown
+const md = new MiniGFM();
+console.log(md.parse('# Hello World')); // &lt;h1&gt;Hello World&lt;/h1&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 演示区域 -->
+        <section id="demo">
+            <h2 class="section-title">在线演示</h2>
+            <div class="demo-container">
+                <div class="demo-panels">
+                    <div class="editor">
+                        <div class="panel-title">Markdown输入</div>
+                        <textarea id="markdown-input"># MiniGFM 示例
+
+## 功能特性演示
+
+- 渲染 **粗体** 和 *斜体* 文本
+- 支持 `行内代码`
+- 自动生成[链接](https://js.org)
+- XSS安全: &lt;script&gt;alert('不会执行')&lt;/script&gt;
+```javascript
+
+// 代码块高亮
+
+function greet(name) {
+
+return 你好, ${name}!;
+
+}
+
+console.log(greet('MiniGFM'));
+```
+> 引用文本: 小而精的Markdown渲染方案
+
+- [x] 任务列表
+- [ ] 更多功能待实现
+
+由 **OblivionOcean** 提供支持</textarea>
+</div>
+<div class="preview">
+    <div class="panel-title">渲染结果</div>
+    <div id="markdown-preview"></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 配置选项 -->
+<section id="config">
+    <h2 class="section-title">配置选项</h2>
+    <div class="content-block chinese-font">
+        <p>MiniGFM提供了灵活的配置选项，满足您的个性化需求。</p>
+
+        <table class="config-table">
+            <thead>
+                <tr>
+                    <th>属性</th>
+                    <th>类型</th>
+                    <th>默认值</th>
+                    <th>描述</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>unsafe</code></td>
+                    <td>boolean</td>
+                    <td>false</td>
+                    <td>允许原始HTML标签 (启用后请注意XSS风险)</td>
+                </tr>
+                <tr>
+                    <td><code>hljs</code></td>
+                    <td>object</td>
+                    <td>null</td>
+                    <td>启用代码高亮，传入highlight.js实例</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top: 30px;">配置示例</h3>
+        <div class="code-container">
+            <div class="code-header">
+                <span>JavaScript</span>
+                <button class="copy-code">复制代码</button>
+            </div>
+            <pre><code>// 创建配置实例
+const md = new MiniGFM({
+    unsafe: true, // 允许原始HTML渲染
+    hljs: hljs,   // 使用highlight.js处理代码块
+});
+
+// 解析Markdown
+const html = md.parse('# Hello World'); 
+console.log(html); // &lt;h1&gt;Hello World&lt;/h1&gt;</code></pre>
+        </div>
+    </div>
+</section>
+</div>
+
+<!-- 页脚 -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-left">
+            <h3>关于MiniGFM</h3>
+            <p class="chinese-font">MiniGFM是一个极简的JavaScript Markdown渲染器，专注于提供GFM兼容性和轻量级方案，特别适合对性能有要求的Web项目。</p>
+
+            <div class="social-links">
+                <a href="https://github.com/OblivionOcean/MiniGFM" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.npmjs.com/package/@oblivionocean/minigfm" target="_blank" title="NPM">
+                    <i class="fab fa-npm"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h3>相关链接</h3>
+            <a href="https://github.com/OblivionOcean/MiniGFM" target="_blank">GitHub仓库</a>
+            <a href="https://www.npmjs.com/package/@oblivionocean/minigfm" target="_blank">NPM包</a>
+            <a href="https://js.org" target="_blank">JS.ORG</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div>
+            <a href="https://www.oblivionocean.top/" class="oss-link">OblivionOcean Open Source Software</a>
+        </div>
+        <div class="ai-generate">本页面由AI设计生成</div>
+    </div>
+</footer>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/dark.min.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+<!-- 引入MiniGFM -->
+<script src="https://cdn.jsdelivr.net/npm/@oblivionocean/minigfm@latest/dist/index.min.js"></script>
+
+<script>
+    // 创建MiniGFM实例
+    const md = new MiniGFM();
+
+    // DOM元素引用
+    const input = document.getElementById('markdown-input');
+    const preview = document.getElementById('markdown-preview');
+
+    // 初始渲染
+    preview.innerHTML = md.parse(input.value);
+
+    // 添加输入事件监听
+    input.addEventListener('input', function () {
+        preview.innerHTML = md.parse(this.value);
+    });
+
+    // 标签切换功能
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', function () {
+            // 移除所有活动标签
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            // 添加活动类
+            this.classList.add('active');
+
+            // 隐藏所有内容
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // 显示当前内容
+            const tabId = this.getAttribute('data-tab') + '-tab';
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+
+    // 复制代码功能
+    document.querySelectorAll('.copy-code').forEach(button => {
+        button.addEventListener('click', function () {
+            const codeBlock = this.parentNode.nextElementSibling;
+            const text = codeBlock.textContent;
+
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = this.textContent;
+                this.textContent = '已复制!';
+
+                setTimeout(() => {
+                    this.textContent = originalText;
+                }, 1500);
+            }).catch(err => {
+                console.error('无法复制: ', err);
+            });
+        });
+    });
+</script>
+</body>
+
+</html>
