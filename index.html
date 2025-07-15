@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiteBox - 超轻量级图片灯箱组件</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- AI Banner -->
+    <div class="ai-banner">
+        <i class="fas fa-robot"></i>
+        <div>本页面由人工智能生成，用于展示LiteBox灯箱组件</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fas fa-box-open"></i>
+                    <div class="logo-text">
+                        <div>LiteBox</div>
+                        <span>超轻量级图片灯箱</span>
+                    </div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#features">核心特性</a></li>
+                    <li><a href="#usage">使用方式</a></li>
+                    <li><a href="#gallery">效果展示</a></li>
+                    <li><a href="https://github.com/OblivionOcean/LiteBox" class="btn btn-outline">GitHub</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>超轻量级原生JavaScript图片灯箱</h1>
+            <p>LiteBox是一个纯原生实现的轻量级图片灯箱组件，无任何外部依赖，提供丰富的图片查看功能，完美兼容现代浏览器。</p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <i class="fas fa-weight"></i>
+                    JS ～5.5KiB + CSS ~2.5KiB
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-compress-arrows-alt"></i>
+                    Gzip后 JS ～2KiB + CSS ～900B
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-bolt"></i>
+                    零依赖，极速加载
+                </div>
+            </div>
+
+            <div class="hero-btns">
+                <a href="https://www.npmjs.com/package/@oblivionocean/litebox" class="btn btn-primary">NPM</a>
+                <a href="https://github.com/OblivionOcean/LiteBox#readme" class="btn btn-outline">查看文档</a>
+            </div>
+
+            <div class="lightbox-demo" id="demo-preview">
+                <div class="lightbox-preview">
+                    <div class="preview-item">
+                        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                            alt="山脉湖泊">
+                    </div>
+                    <div class="preview-item">
+                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                            alt="森林晨曦">
+                    </div>
+                    <div class="preview-item">
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                            alt="雪山星空">
+                    </div>
+                    <div class="preview-item">
+                        <img src="https://images.unsplash.com/photo-1505142468610-359e7f316449?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80"
+                            alt="宁静森林">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>核心特性</h2>
+                <p>原生JavaScript实现，轻量高效且功能强大</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>极速轻量</h3>
+                    <p>核心代码仅8KiB，Gzip后压缩至2.87KiB，无任何外部依赖，确保最快加载速度</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                    <h3>强大功能</h3>
+                    <p>支持图片缩放、旋转、翻页浏览、一键重置等功能，满足各种图片查看需求</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-keyboard"></i>
+                    <h3>键盘导航</h3>
+                    <p>内置丰富键盘快捷键：ESC关闭、方向键翻页、R旋转、0重置、+/-缩放</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>现代UI</h3>
+                    <p>卡片式布局、半透明控制面板、流畅动画效果，提供优雅的用户体验</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5对话框</h3>
+                    <p>基于HTML5 &lt;dialog&gt;元素实现，支持现代浏览器并自动降级处理</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-code"></i>
+                    <h3>简单集成</h3>
+                    <p>通过简单HTML属性配置，支持npm安装或CDN引入，快速集成到项目中</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section gallery-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>效果展示</h2>
+                <p>点击下方图片体验LiteBox灯箱功能</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-index="0">
+                    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                        data-src="https://images.unsplash.com/photo-1501854140801-50d01698950b" data-caption="山脉湖泊"
+                        data-title="山脉与湖泊">
+                    <div class="image-info">
+                        <div class="litebox-title">山脉与湖泊</div>
+                        <div class="litebox-caption">自然风光 - 山脉与宁静的湖泊</div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="1">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                        data-src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" data-caption="森林晨曦"
+                        data-title="晨雾森林">
+                    <div class="image-info">
+                        <div class="litebox-title">晨雾森林</div>
+                        <div class="litebox-caption">森林晨曦 - 阳光穿透晨雾</div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                        data-src="https://images.unsplash.com/photo-1519681393784-d120267933ba" data-caption="雪山星空"
+                        data-title="雪山星空">
+                    <div class="image-info">
+                        <div class="litebox-title">雪山星空</div>
+                        <div class="litebox-caption">壮丽的雪山与银河景观</div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="3">
+                    <img src="https://images.unsplash.com/photo-1505142468610-359e7f316449?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                        data-src="https://images.unsplash.com/photo-1505142468610-359e7f316449" data-caption="宁静森林"
+                        data-title="宁静森林">
+                    <div class="image-info">
+                        <div class="litebox-title">宁静森林</div>
+                        <div class="litebox-caption">秋季森林的金黄色调</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="keyboard-shortcuts">
+                <div class="shortcut-card">
+                    <i class="fas fa-search-plus"></i>
+                    <h4>放大图片</h4>
+                    <p>按 <span class="key">+</span> 键</p>
+                </div>
+                <div class="shortcut-card">
+                    <i class="fas fa-search-minus"></i>
+                    <h4>缩小图片</h4>
+                    <p>按 <span class="key">-</span> 键</p>
+                </div>
+                <div class="shortcut-card">
+                    <i class="fas fa-undo"></i>
+                    <h4>旋转图片</h4>
+                    <p>按 <span class="key">R</span> 键</p>
+                </div>
+                <div class="shortcut-card">
+                    <i class="fas fa-home"></i>
+                    <h4>重置视图</h4>
+                    <p>按 <span class="key">0</span> 键</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage -->
+    <section id="usage" class="section usage">
+        <div class="container">
+            <div class="section-title">
+                <h2>快速开始</h2>
+                <p>只需简单几步即可集成LiteBox</p>
+            </div>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>安装 LiteBox</span>
+                    <button class="btn-copy">
+                        <i class="far fa-copy"></i> 复制代码
+                    </button>
+                </div>
+                <pre>
+                    <code>
+<span class="comment">&lt;!-- 基本HTML结构示例 --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">class=</span><span class="string">"gallery"</span><span class="tag">&gt;</span></span>
+<span class="tag">  &lt;div <span class="attribute">class=</span><span class="string">"thumbnail"</span><span class="tag">&gt;</span></span>
+<span class="tag">    &lt;img </span>
+<span>      <span class="attribute">src=</span><span class="string">"thumbnail.jpg"</span></span>
+<span>      <span class="attribute">data-src=</span><span class="string">"fullsize.jpg"</span></span>
+<span>      <span class="attribute">alt=</span><span class="string">"图片描述"</span></span>
+<span>      <span class="attribute">data-title=</span><span class="string">"图片标题"</span></span>
+<span>      <span class="attribute">data-caption=</span><span class="string">"图片说明"</span></span>
+<span>    <span class="tag">/&gt;</span></span>
+<span class="tag">  &lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+<br>
+<span class="comment">&lt;!-- 引入LiteBox --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attribute">rel=</span><span class="string">"stylesheet"</span> <span class="attribute">href=</span><span class="string">"https://cdn.jsdelivr.net/npm/@oblivionocean/litebox@latest/dist/index.css"</span><span class="tag">&gt;</span></span>
+<span class="tag">&lt;script</span> <span class="attribute">src=</span><span class="string">"https://cdn.jsdelivr.net/npm/@oblivionocean/litebox@latest/dist/index.min.js"</span><span class="tag">&gt;</span><span class="tag">&lt;/script&gt;</span></span></code>
+                </pre>
+            </div>
+
+            <div class="browser-compat">
+                <div class="browser-icon chrome"><i class="fab fa-chrome"></i></div>
+                <div class="browser-icon firefox"><i class="fab fa-firefox"></i></div>
+                <div class="browser-icon safari"><i class="fab fa-safari"></i></div>
+                <div class="browser-icon edge"><i class="fab fa-edge"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>开始使用 LiteBox</h2>
+            <p>加入开源社区，为你的项目添加现代化的图片查看体验</p>
+            <a href="https://github.com/OblivionOcean/LiteBox" class="btn">查看 GitHub 仓库</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>LiteBox</h3>
+                    <p>一个原生JavaScript实现的超轻量级图片灯箱组件，专注于高性能、优雅体验和无依赖设计。</p>
+                </div>
+                <div class="footer-column">
+                    <h3>资源</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/OblivionOcean/LiteBox#readme"><i class="fas fa-book"></i>文档</a>
+                        </li>
+                        <li><a href="https://github.com/OblivionOcean/LiteBox#readme"><i
+                                    class="fas fa-laptop-code"></i>示例</a></li>
+                        <li><a href="https://github.com/OblivionOcean/LiteBox"><i class="fab fa-github"></i>GitHub仓库</a>
+                        </li>
+                        <li><a href="https://github.com/OblivionOcean/LiteBox/issues"><i class="fas fa-bug"></i>问题反馈</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <a href="https://www.oblivionocean.top/" class="oooss-card"><img
+                            src="https://www.oblivionocean.top/assets/img/logo.webp">OblivionOcean<br/>Open Source
+                        Software</a>
+                </div>
+                <!--<div class="footer-column">
+                    <h3>支持</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-code-branch"></i>贡献指南</a></li>
+                        <li><a href="#"><i class="fas fa-balance-scale"></i>MIT许可证</a></li>
+                        <li><a href="#"><i class="fas fa-exclamation-circle"></i>浏览器兼容性</a></li>
+                    </ul>
+                </div>-->
+            </div>
+            <div class="copyright">
+                <p>© 2023 LiteBox. 保留所有权利。</p>
+                <p>采用 MIT 许可证发布 - <a href="https://www.oblivionocean.top/" class="oss-link">OblivionOcean Open Source
+                        Software</a></p>
+                <p style="margin-top: 0.5rem; font-size: 0.8em;">本页面由人工智能生成，用于展示LiteBox功能</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LiteBox Modal -->
+    <div class="litebox-overlay" id="litebox-modal">
+        <div class="litebox-container">
+            <div class="litebox-controls">
+                <button id="btn-rotate"><i class="fas fa-redo"></i></button>
+                <button id="btn-reset"><i class="fas fa-sync-alt"></i></button>
+                <button id="btn-close"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="litebox-nav">
+                <button id="btn-prev"><i class="fas fa-chevron-left"></i></button>
+                <button id="btn-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <div class="litebox-image">
+                <img id="litebox-img" src="" alt="">
+            </div>
+
+            <div class="litebox-info">
+                <div id="litebox-title" class="litebox-title"></div>
+                <div id="litebox-caption" class="litebox-caption"></div>
+            </div>
+        </div>
+    </div>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@oblivionocean/litebox@latest/dist/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/@oblivionocean/litebox@latest/dist/index.min.js"></script>
+</body>
+
+</html>
