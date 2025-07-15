@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     </link>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Header Navigation -->
     <header>
@@ -253,7 +255,8 @@ console.log(html); // &lt;h1&gt;Hello World&lt;/h1&gt;</code></pre>
         <div class="footer-content">
             <div class="footer-left">
                 <h3>About MiniGFM</h3>
-                <p>MiniGFM is a minimal JavaScript Markdown renderer focused on GFM compatibility and lightweight solutions, ideal for performance-critical web projects.</p>
+                <p>MiniGFM is a minimal JavaScript Markdown renderer focused on GFM compatibility and lightweight
+                    solutions, ideal for performance-critical web projects.</p>
 
                 <div class="social-links">
                     <a href="https://github.com/OblivionOcean/MiniGFM" target="_blank" title="GitHub">
@@ -291,7 +294,7 @@ console.log(html); // &lt;h1&gt;Hello World&lt;/h1&gt;</code></pre>
 
     <script>
         // Create MiniGFM instance
-        const md = new MiniGFM();
+        const md = new MiniGFM({ hljs });
 
         // DOM elements
         const input = document.getElementById('markdown-input');
@@ -301,13 +304,13 @@ console.log(html); // &lt;h1&gt;Hello World&lt;/h1&gt;</code></pre>
         preview.innerHTML = md.parse(input.value);
 
         // Add input event listener
-        input.addEventListener('input', function() {
+        input.addEventListener('input', function () {
             preview.innerHTML = md.parse(this.value);
         });
 
         // Tab switching
         document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', function() {
+            tab.addEventListener('click', function () {
                 // Remove active from all tabs
                 document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
                 // Add active class
@@ -326,7 +329,7 @@ console.log(html); // &lt;h1&gt;Hello World&lt;/h1&gt;</code></pre>
 
         // Copy code functionality
         document.querySelectorAll('.copy-code').forEach(button => {
-            button.addEventListener('click', function() {
+            button.addEventListener('click', function () {
                 const codeBlock = this.parentNode.nextElementSibling;
                 const text = codeBlock.textContent;
 
@@ -342,4 +345,5 @@ console.log(html); // &lt;h1&gt;Hello World&lt;/h1&gt;</code></pre>
         });
     </script>
 </body>
+
 </html>
